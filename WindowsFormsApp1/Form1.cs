@@ -140,9 +140,9 @@ namespace WindowsFormsApp1
         {
             trackBar_mu.Enabled = true;
             buttonLab2.Enabled = false;
-            trackBar_Size.Value = trackBar_Size.Maximum;
+           // trackBar_Size.Value = trackBar_Size.Maximum;
             powerSource.noiseCoefficient = trackBar_Size.Value;
-            trackBar_Size.Enabled = false;
+           // trackBar_Size.Enabled = false;
         }
 
         private void buttonPause_Click(object sender, EventArgs e)
