@@ -44,6 +44,18 @@ namespace WindowsFormsApp1
             timerOscilloscope.Enabled = true;
             buttonSelectVariant.Enabled = false;
             
+            if (powerSource.voltage <= 3.5)
+            {
+                label20.Text = "Матеріал :HF70";
+            }
+            if (powerSource.voltage >= 3.5 && powerSource.voltage <= 4.5)
+            {
+                label20.Text = "Матеріал :HF57";
+            }
+            if (powerSource.voltage >= 4.5)
+            {
+                label20.Text = "Матеріал :HF40";
+            }
         }
 
         private void timerVoltmeter_Tick(object sender, EventArgs e)
@@ -170,6 +182,21 @@ namespace WindowsFormsApp1
             this.Hide();
             info lb1 = new info();
             lb1.Show();
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbxVariant_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
