@@ -1,4 +1,11 @@
-﻿using System;
+﻿//!*****************************************************************************
+//! __Revisions:__
+//!  Date       | Author              | Comments
+//!  ---------- | ------------------- | ----------------
+//!  30/05/2017 | Panchenko Vladislav | _
+//
+//******************************************************************************
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
