@@ -21,7 +21,7 @@ using ZedGraph;
 //---------------------------------------------------------------------------------
 namespace volt_anus
 {
-    public partial class Калибровка : Form
+    public partial class VoltStandart : Form
     {
         private C_GPIBDevice V; // HP34420A
                                 //   private C_GPIBDevice K;// B1-29
@@ -33,7 +33,7 @@ namespace volt_anus
         //false =1 chanal , true =2 chanal
         //counterChanal = false;
         bool writer = false;
-        public Калибровка()
+        public VoltStandart()
         {
             InitializeComponent();
             _dataA = new List<double>();
@@ -511,7 +511,7 @@ namespace volt_anus
         private void rebootAPI_Click(object sender, EventArgs e)
         {
            Hide();
-           Калибровка lb1 = new Калибровка();
+           VoltStandart lb1 = new VoltStandart();
            lb1.Show();
         }
 
