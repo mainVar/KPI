@@ -308,7 +308,7 @@ namespace volt_anus
 
                 // Вычислим новое значение
                 //   double newValueOnChanaleA = _rnd.NextDouble() * (_ymax - _ymin) + _ymin;
-            //    dataA = dataA.Substring(9);
+                dataA = dataA.Substring(9);
                 //add cheking value it or not ;
                 double newValueOnChanaleA = Double.Parse(dataA);
                 //Добавим его в конец списка
@@ -321,7 +321,7 @@ namespace volt_anus
                     _dataA.RemoveAt(0);
                 }
                 //------------------------------------------------------------------------
-              //  dataB = dataB.Substring(9);
+                dataB = dataB.Substring(9);
                 double newValueOnChanaleB = Double.Parse(dataB);
                 // Добавим его в конец списка
                 _dataB.Add(newValueOnChanaleB);

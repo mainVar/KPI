@@ -86,15 +86,16 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(438, 226);
+            this.textBox1.Location = new System.Drawing.Point(438, 213);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(196, 92);
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(275, 157);
             this.textBox1.TabIndex = 1;
             // 
             // write
             // 
-            this.write.Location = new System.Drawing.Point(165, 81);
+            this.write.Location = new System.Drawing.Point(165, 67);
             this.write.Name = "write";
             this.write.Size = new System.Drawing.Size(75, 23);
             this.write.TabIndex = 2;
@@ -104,7 +105,7 @@
             // 
             // read
             // 
-            this.read.Location = new System.Drawing.Point(246, 81);
+            this.read.Location = new System.Drawing.Point(246, 67);
             this.read.Name = "read";
             this.read.Size = new System.Drawing.Size(75, 23);
             this.read.TabIndex = 3;
@@ -115,7 +116,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(435, 201);
+            this.label1.Location = new System.Drawing.Point(435, 190);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 4;
@@ -361,14 +362,14 @@
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // открытьToolStripMenuItem1
             // 
             this.открытьToolStripMenuItem1.Name = "открытьToolStripMenuItem1";
-            this.открытьToolStripMenuItem1.Size = new System.Drawing.Size(132, 22);
+            this.открытьToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.открытьToolStripMenuItem1.Text = "Открыть ";
             this.открытьToolStripMenuItem1.Click += new System.EventHandler(this.открытьToolStripMenuItem_Click);
             // 
@@ -399,7 +400,7 @@
             // 
             // rebootAPI
             // 
-            this.rebootAPI.Location = new System.Drawing.Point(165, 116);
+            this.rebootAPI.Location = new System.Drawing.Point(165, 100);
             this.rebootAPI.Name = "rebootAPI";
             this.rebootAPI.Size = new System.Drawing.Size(75, 23);
             this.rebootAPI.TabIndex = 22;
@@ -410,7 +411,7 @@
             // ShortString
             // 
             this.ShortString.AutoSize = true;
-            this.ShortString.Location = new System.Drawing.Point(165, 144);
+            this.ShortString.Location = new System.Drawing.Point(165, 129);
             this.ShortString.Name = "ShortString";
             this.ShortString.Size = new System.Drawing.Size(96, 17);
             this.ShortString.TabIndex = 23;
@@ -419,7 +420,7 @@
             // 
             // Calibr
             // 
-            this.Calibr.Location = new System.Drawing.Point(246, 116);
+            this.Calibr.Location = new System.Drawing.Point(246, 100);
             this.Calibr.Name = "Calibr";
             this.Calibr.Size = new System.Drawing.Size(75, 23);
             this.Calibr.TabIndex = 24;
