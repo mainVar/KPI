@@ -1,0 +1,10 @@
+C:\Users\User\Desktop\Beest\volt_anus\volt_anus\obj\Debug\volt_anus.csprojResolveAssemblyReference.cache
+C:\Users\User\Desktop\Beest\volt_anus\volt_anus\obj\Debug\volt_anus.Form1.resources
+C:\Users\User\Desktop\Beest\volt_anus\volt_anus\obj\Debug\volt_anus.csproj.GenerateResource.Cache
+C:\Users\User\Desktop\Beest\volt_anus\volt_anus\obj\Debug\volt_anus.N4_6.resources
+C:\Users\User\Desktop\Beest\volt_anus\volt_anus\bin\Debug\volt_URV.exe.config
+C:\Users\User\Desktop\Beest\volt_anus\volt_anus\bin\Debug\volt_URV.exe
+C:\Users\User\Desktop\Beest\volt_anus\volt_anus\bin\Debug\volt_URV.pdb
+C:\Users\User\Desktop\Beest\volt_anus\volt_anus\obj\Debug\volt_URV.Properties.Resources.resources
+C:\Users\User\Desktop\Beest\volt_anus\volt_anus\obj\Debug\volt_URV.exe
+C:\Users\User\Desktop\Beest\volt_anus\volt_anus\obj\Debug\volt_URV.pdb

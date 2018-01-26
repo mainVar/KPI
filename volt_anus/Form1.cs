@@ -269,13 +269,17 @@ namespace volt_anus
                     dataB = dataB.Substring(9);
                     double newValueA = Double.Parse(dataA);
                     double newValueB = Double.Parse(dataB);
-                    if (!ActiveCalibr)
+                    if (!ActiveCalibr && coefCalibr != 0)
                     {
-                        newValueB = newValueB * coefCalibr;
+                        
+                            newValueB = newValueB * coefCalibr;
+                        
                         
                     }
+                    //newValueB = Math.Round(newValueB, 5);
+                    string temp = newValueB.ToString("0.000E+00");
                     // rewrite it ~!!!!
-                    dataGridViewTable.Rows.Add(counterZeroAdd + sum, DateTime.Now, dataA, Math.Round(newValueB, 5));// write |number|date| measur value| 
+                    dataGridViewTable.Rows.Add(counterZeroAdd + sum, DateTime.Now, dataA, temp);// write |number|date| measur value| 
                     dataGridViewTable.FirstDisplayedScrollingRowIndex = counter;//skroll 
                     counter++;
                    
@@ -290,9 +294,11 @@ namespace volt_anus
                 }
                 if (ActiveCalibr)
                 {
-                    double newValueA = Double.Parse(dataA);
-                    double newValueB = Double.Parse(dataB);
-                    coefCalibr = newValueA / newValueB;
+                    dataA = dataA.Substring(9);
+                    dataB = dataB.Substring(9);
+                    double ValueA = Double.Parse(dataA);
+                    double ValueB = Double.Parse(dataB);
+                    coefCalibr = ValueA / ValueB;
                     textBox1.AppendText(coefCalibr + "коефіцієнт калібровки \r\n");
                     timer2.Stop();
                     ActiveCalibr = false;
@@ -302,7 +308,7 @@ namespace volt_anus
 
                 // Вычислим новое значение
                 //   double newValueOnChanaleA = _rnd.NextDouble() * (_ymax - _ymin) + _ymin;
-                dataA = dataA.Substring(9);
+            //    dataA = dataA.Substring(9);
                 //add cheking value it or not ;
                 double newValueOnChanaleA = Double.Parse(dataA);
                 //Добавим его в конец списка
@@ -315,7 +321,7 @@ namespace volt_anus
                     _dataA.RemoveAt(0);
                 }
                 //------------------------------------------------------------------------
-                dataB = dataB.Substring(9);
+              //  dataB = dataB.Substring(9);
                 double newValueOnChanaleB = Double.Parse(dataB);
                 // Добавим его в конец списка
                 _dataB.Add(newValueOnChanaleB);
@@ -353,7 +359,7 @@ namespace volt_anus
         /// Для генерации слуайных данные по таймеру
         /// </summary>
         //Random _rnd = new Random();
-
+        
         // Интервал изменения данных по вертикали
         double _ymin = -1.0;
         double _ymax = 10.0;
