@@ -69,7 +69,7 @@ D:\Projects\GALERA\Beest\Git\KPI\volt_anus\bin\Debug\tr\ZedGraph.resources.dll
 D:\Projects\GALERA\Beest\Git\KPI\volt_anus\bin\Debug\zh-cn\ZedGraph.resources.dll
 D:\Projects\GALERA\Beest\Git\KPI\volt_anus\bin\Debug\zh-tw\ZedGraph.resources.dll
 D:\Projects\GALERA\Beest\Git\KPI\volt_anus\obj\Debug\volt_URV.csprojResolveAssemblyReference.cache
-D:\Projects\GALERA\Beest\Git\KPI\volt_anus\obj\Debug\volt_anus.N4_6.resources
 D:\Projects\GALERA\Beest\Git\KPI\volt_anus\obj\Debug\volt_URV.Properties.Resources.resources
 D:\Projects\GALERA\Beest\Git\KPI\volt_anus\obj\Debug\volt_URV.csproj.GenerateResource.Cache
 D:\Projects\GALERA\Beest\Git\KPI\volt_anus\obj\Debug\volt_anus.VoltStandart.resources
+D:\Projects\GALERA\Beest\Git\KPI\volt_anus\obj\Debug\volt_anus.V1_29.resources
