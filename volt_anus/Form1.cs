@@ -107,7 +107,7 @@ namespace volt_anus
         // button  write 
         private void write_Click(object sender, EventArgs e)
         {
-            C_GPIBDevice.ibwrt(V.i_DeviceID, "PA, IA, F2, X1", 14);
+            C_GPIBDevice.ibwrt(V.i_DeviceID, "UV1"  , 3 );
            // C_GPIBDevice.ibwrt(V.i_DeviceID, "ROUT:TERM FRON1;*WAI", 20); 
         }
         private string readData()

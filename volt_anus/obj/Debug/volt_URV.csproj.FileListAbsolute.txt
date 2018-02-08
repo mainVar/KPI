@@ -72,4 +72,4 @@ D:\Projects\GALERA\Beest\Git\KPI\volt_anus\obj\Debug\volt_URV.csprojResolveAssem
 D:\Projects\GALERA\Beest\Git\KPI\volt_anus\obj\Debug\volt_URV.Properties.Resources.resources
 D:\Projects\GALERA\Beest\Git\KPI\volt_anus\obj\Debug\volt_URV.csproj.GenerateResource.Cache
 D:\Projects\GALERA\Beest\Git\KPI\volt_anus\obj\Debug\volt_anus.VoltStandart.resources
-D:\Projects\GALERA\Beest\Git\KPI\volt_anus\obj\Debug\volt_anus.V1_29.resources
+D:\Projects\GALERA\Beest\Git\KPI\volt_anus\obj\Debug\volt_URV.V1_29.resources
