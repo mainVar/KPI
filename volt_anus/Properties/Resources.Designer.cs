@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace volt_URV.Properties {
+namespace volt_anus.Properties {
     using System;
     
     

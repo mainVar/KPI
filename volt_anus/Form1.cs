@@ -27,7 +27,7 @@ namespace volt_anus
                                 //   private C_GPIBDevice K;// B1-29
         private int counter = 1;//   counter in data Table
         private string counterZeroAdd = "";
-        bool counterChanal=false;
+        bool counterChanal = false;
         bool ActiveCalibr = false;
         double coefCalibr = 0;
         //false =1 chanal , true =2 chanal
@@ -40,7 +40,7 @@ namespace volt_anus
             _dataB = new List<double>();
             DrawGraph();
         }
-        
+
         private void Init_Click(object sender, EventArgs e)
         {
             //this.textBox1.AppendText("A");
@@ -50,13 +50,13 @@ namespace volt_anus
                 case "Init":
 
                     V = new C_GPIBDevice(0, int.Parse(textBox_initNum.Text), 0, int.Parse(textBox_initT.Text), 1, 0);
-                   
+
                     if (V.flag_DeviceIsReady == true)
                     {
                         textBox1.Clear();
-                        this.textBox1.AppendText(" init compleet"); 
+                        this.textBox1.AppendText(" init compleet");
                     }
-                
+
                     break;
                 default:
                     return;
@@ -71,7 +71,7 @@ namespace volt_anus
         //--------------------------------------------------------------------------------------------------------
         public string Comand() // checked chanal & (speed) time measurment
         {
-//if (comboBox.)
+            //if (comboBox.)
             {
                 string chanal = "";//active chanal + time speed
                 int speed;
@@ -99,16 +99,22 @@ namespace volt_anus
             string lengt;
             int bit;
             lengt = Comand().Length.ToString(CultureInfo.InvariantCulture);
-          //  textBox1.AppendText(lengt + '\r' + '\n') ;
+            //  textBox1.AppendText(lengt + '\r' + '\n') ;
             bit = int.Parse(lengt);
             return bit;
+
         }
+      
         //---------------------------------------------------------------------------------------------------------
         // button  write 
         private void write_Click(object sender, EventArgs e)
         {
-            C_GPIBDevice.ibwrt(V.i_DeviceID, "UV1"  , 3 );
-           // C_GPIBDevice.ibwrt(V.i_DeviceID, "ROUT:TERM FRON1;*WAI", 20); 
+            C_GPIBDevice.ibwrt(V.i_DeviceID, "UV1.1\r\n"  , 7 );
+            V.fn_SendBoardCmd("\x0008");
+          
+           
+
+            // C_GPIBDevice.ibwrt(V.i_DeviceID, "ROUT:TERM FRON1;*WAI", 20); 
         }
         private string readData()
         {
@@ -282,8 +288,6 @@ namespace volt_anus
                     dataGridViewTable.Rows.Add(counterZeroAdd + sum, DateTime.Now, dataA, temp);// write |number|date| measur value| 
                     dataGridViewTable.FirstDisplayedScrollingRowIndex = counter;//skroll 
                     counter++;
-                   
-
 
                 }
                 else
@@ -308,9 +312,10 @@ namespace volt_anus
 
                 // Вычислим новое значение
                 //   double newValueOnChanaleA = _rnd.NextDouble() * (_ymax - _ymin) + _ymin;
-                dataA = dataA.Substring(9);
+                 dataA = dataA.Substring(9);
                 //add cheking value it or not ;
-                double newValueOnChanaleA = Double.Parse(dataA);
+                 double newValueOnChanaleA = Double.Parse(dataA);
+                //double newValueOnChanaleA = 2.5;
                 //Добавим его в конец списка
                 _dataA.Add(newValueOnChanaleA);
 
@@ -321,8 +326,9 @@ namespace volt_anus
                     _dataA.RemoveAt(0);
                 }
                 //------------------------------------------------------------------------
-                dataB = dataB.Substring(9);
-                double newValueOnChanaleB = Double.Parse(dataB);
+                    dataB = dataB.Substring(9);
+                 double newValueOnChanaleB = Double.Parse(dataB);
+               // double newValueOnChanaleB = 2.2;
                 // Добавим его в конец списка
                 _dataB.Add(newValueOnChanaleB);
                 // Удалим первый элемент в списке данных, 
@@ -335,7 +341,6 @@ namespace volt_anus
                 writer = false;
             }
 
-           
             if (counter >= Nmeasur)
             {
                 timer2.Stop();
@@ -363,6 +368,7 @@ namespace volt_anus
         // Интервал изменения данных по вертикали
         double _ymin = -1.0;
         double _ymax = 10.0;
+      
         private void DrawGraph()
         {
             // int _capacity = 15000;
@@ -516,12 +522,23 @@ namespace volt_anus
         // end user menu -----------------------------------------------------------------------------
         private void rebootAPI_Click(object sender, EventArgs e)
         {
-           Hide();
-           VoltStandart lb1 = new VoltStandart();
-           lb1.Show();
+            //  Hide();
+            Application.Restart();
+           // VoltStandart lb1 = new VoltStandart();
+           //lb1.Show();
         }
 
-      
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Environment.Exit(0);
+        }
+
+        private void but_menuV1_29_Click(object sender, EventArgs e)
+        {
+            V1_29 menuV1_29 = new V1_29();
+                menuV1_29.Show();
+        }
     }
 
 }

@@ -17,6 +17,8 @@ namespace volt_anus
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new VoltStandart());
+           
+
         }
     
     }

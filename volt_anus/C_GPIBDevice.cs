@@ -252,9 +252,9 @@ char
 			as command bytes (interface messages)*/
 			//..    int i_BoardID = 0;
 			ibcmd(i_BoardIndex, s_Data, s_Data.Length);
-
-			// supress the first error message
-			if (flag_BoardCmdWasSentAtLeastOnce)
+            MessageBox.Show(s_Data+"20");
+            // supress the first error message
+            if (flag_BoardCmdWasSentAtLeastOnce)
 				if ((ThreadIbsta() & ERR) != 0) fn_FormGpibErrorMsg("ibcmd ERROR");
               else flag_BoardCmdWasSentAtLeastOnce = true;
             

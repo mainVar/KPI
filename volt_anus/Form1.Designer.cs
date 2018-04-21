@@ -69,6 +69,9 @@
             this.rebootAPI = new System.Windows.Forms.Button();
             this.ShortString = new System.Windows.Forms.CheckBox();
             this.Calibr = new System.Windows.Forms.Button();
+            this.CloseButton = new System.Windows.Forms.Button();
+            this.but_menuV1_29 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable)).BeginInit();
             this.menuStrip.SuspendLayout();
@@ -86,11 +89,11 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(438, 213);
+            this.textBox1.Location = new System.Drawing.Point(435, 191);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(275, 157);
+            this.textBox1.Size = new System.Drawing.Size(288, 179);
             this.textBox1.TabIndex = 1;
             // 
             // write
@@ -116,7 +119,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(435, 190);
+            this.label1.Location = new System.Drawing.Point(435, 175);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 4;
@@ -194,7 +197,7 @@
             // 
             // button_STARTmeasur
             // 
-            this.button_STARTmeasur.Location = new System.Drawing.Point(623, 60);
+            this.button_STARTmeasur.Location = new System.Drawing.Point(623, 43);
             this.button_STARTmeasur.Name = "button_STARTmeasur";
             this.button_STARTmeasur.Size = new System.Drawing.Size(100, 45);
             this.button_STARTmeasur.TabIndex = 8;
@@ -204,7 +207,7 @@
             // 
             // button_STOPmeasur
             // 
-            this.button_STOPmeasur.Location = new System.Drawing.Point(623, 116);
+            this.button_STOPmeasur.Location = new System.Drawing.Point(623, 98);
             this.button_STOPmeasur.Name = "button_STOPmeasur";
             this.button_STOPmeasur.Size = new System.Drawing.Size(100, 45);
             this.button_STOPmeasur.TabIndex = 9;
@@ -215,7 +218,7 @@
             // cBox_A
             // 
             this.cBox_A.AutoSize = true;
-            this.cBox_A.Location = new System.Drawing.Point(542, 144);
+            this.cBox_A.Location = new System.Drawing.Point(542, 124);
             this.cBox_A.Name = "cBox_A";
             this.cBox_A.Size = new System.Drawing.Size(75, 17);
             this.cBox_A.TabIndex = 10;
@@ -225,7 +228,7 @@
             // cBox_B
             // 
             this.cBox_B.AutoSize = true;
-            this.cBox_B.Location = new System.Drawing.Point(542, 167);
+            this.cBox_B.Location = new System.Drawing.Point(542, 140);
             this.cBox_B.Name = "cBox_B";
             this.cBox_B.Size = new System.Drawing.Size(75, 17);
             this.cBox_B.TabIndex = 11;
@@ -234,7 +237,7 @@
             // 
             // textBox_Nmeasur
             // 
-            this.textBox_Nmeasur.Location = new System.Drawing.Point(560, 58);
+            this.textBox_Nmeasur.Location = new System.Drawing.Point(560, 43);
             this.textBox_Nmeasur.Name = "textBox_Nmeasur";
             this.textBox_Nmeasur.Size = new System.Drawing.Size(57, 20);
             this.textBox_Nmeasur.TabIndex = 12;
@@ -243,7 +246,7 @@
             // label_Nmeasur
             // 
             this.label_Nmeasur.AutoSize = true;
-            this.label_Nmeasur.Location = new System.Drawing.Point(426, 58);
+            this.label_Nmeasur.Location = new System.Drawing.Point(426, 43);
             this.label_Nmeasur.Name = "label_Nmeasur";
             this.label_Nmeasur.Size = new System.Drawing.Size(128, 13);
             this.label_Nmeasur.TabIndex = 13;
@@ -252,7 +255,7 @@
             // label_Time
             // 
             this.label_Time.AutoSize = true;
-            this.label_Time.Location = new System.Drawing.Point(383, 87);
+            this.label_Time.Location = new System.Drawing.Point(383, 72);
             this.label_Time.Name = "label_Time";
             this.label_Time.Size = new System.Drawing.Size(171, 13);
             this.label_Time.TabIndex = 14;
@@ -260,7 +263,7 @@
             // 
             // textBox_Time
             // 
-            this.textBox_Time.Location = new System.Drawing.Point(560, 113);
+            this.textBox_Time.Location = new System.Drawing.Point(560, 98);
             this.textBox_Time.Name = "textBox_Time";
             this.textBox_Time.Size = new System.Drawing.Size(57, 20);
             this.textBox_Time.TabIndex = 15;
@@ -316,7 +319,7 @@
             // 
             // textBox_TimeM
             // 
-            this.textBox_TimeM.Location = new System.Drawing.Point(560, 84);
+            this.textBox_TimeM.Location = new System.Drawing.Point(560, 69);
             this.textBox_TimeM.Name = "textBox_TimeM";
             this.textBox_TimeM.Size = new System.Drawing.Size(57, 20);
             this.textBox_TimeM.TabIndex = 17;
@@ -329,7 +332,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(431, 115);
+            this.label2.Location = new System.Drawing.Point(431, 100);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 13);
             this.label2.TabIndex = 18;
@@ -362,21 +365,21 @@
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // открытьToolStripMenuItem1
             // 
             this.открытьToolStripMenuItem1.Name = "открытьToolStripMenuItem1";
-            this.открытьToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.открытьToolStripMenuItem1.Size = new System.Drawing.Size(132, 22);
             this.открытьToolStripMenuItem1.Text = "Открыть ";
             this.открытьToolStripMenuItem1.Click += new System.EventHandler(this.открытьToolStripMenuItem_Click);
             // 
             // cBoxAB
             // 
             this.cBoxAB.AutoSize = true;
-            this.cBoxAB.Location = new System.Drawing.Point(542, 190);
+            this.cBoxAB.Location = new System.Drawing.Point(542, 156);
             this.cBoxAB.Name = "cBoxAB";
             this.cBoxAB.Size = new System.Drawing.Size(88, 17);
             this.cBoxAB.TabIndex = 20;
@@ -400,9 +403,9 @@
             // 
             // rebootAPI
             // 
-            this.rebootAPI.Location = new System.Drawing.Point(165, 100);
+            this.rebootAPI.Location = new System.Drawing.Point(649, 0);
             this.rebootAPI.Name = "rebootAPI";
-            this.rebootAPI.Size = new System.Drawing.Size(75, 23);
+            this.rebootAPI.Size = new System.Drawing.Size(46, 23);
             this.rebootAPI.TabIndex = 22;
             this.rebootAPI.Text = "reboot";
             this.rebootAPI.UseVisualStyleBackColor = true;
@@ -420,7 +423,7 @@
             // 
             // Calibr
             // 
-            this.Calibr.Location = new System.Drawing.Point(246, 100);
+            this.Calibr.Location = new System.Drawing.Point(165, 100);
             this.Calibr.Name = "Calibr";
             this.Calibr.Size = new System.Drawing.Size(75, 23);
             this.Calibr.TabIndex = 24;
@@ -428,11 +431,43 @@
             this.Calibr.UseVisualStyleBackColor = true;
             this.Calibr.Click += new System.EventHandler(this.Calibr_Click);
             // 
+            // CloseButton
+            // 
+            this.CloseButton.Location = new System.Drawing.Point(701, 0);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(22, 23);
+            this.CloseButton.TabIndex = 25;
+            this.CloseButton.Text = "X";
+            this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
+            // 
+            // but_menuV1_29
+            // 
+            this.but_menuV1_29.Location = new System.Drawing.Point(165, 11);
+            this.but_menuV1_29.Name = "but_menuV1_29";
+            this.but_menuV1_29.Size = new System.Drawing.Size(75, 23);
+            this.but_menuV1_29.TabIndex = 26;
+            this.but_menuV1_29.Text = "V1-29";
+            this.but_menuV1_29.UseVisualStyleBackColor = true;
+            this.but_menuV1_29.Click += new System.EventHandler(this.but_menuV1_29_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(246, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 27;
+            this.button1.Text = "N4-7";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // VoltStandart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(725, 618);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.but_menuV1_29);
+            this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.Calibr);
             this.Controls.Add(this.ShortString);
             this.Controls.Add(this.rebootAPI);
@@ -458,6 +493,7 @@
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
             this.Name = "VoltStandart";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -511,6 +547,9 @@
         private System.Windows.Forms.Button rebootAPI;
         private System.Windows.Forms.CheckBox ShortString;
         private System.Windows.Forms.Button Calibr;
+        private System.Windows.Forms.Button CloseButton;
+        private System.Windows.Forms.Button but_menuV1_29;
+        private System.Windows.Forms.Button button1;
     }
 }
 
