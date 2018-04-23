@@ -35,7 +35,7 @@
             this.read = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox = new System.Windows.Forms.ComboBox();
+            this.Box_Device = new System.Windows.Forms.ComboBox();
             this.label_t = new System.Windows.Forms.Label();
             this.label_adr = new System.Windows.Forms.Label();
             this.textBox_initT = new System.Windows.Forms.TextBox();
@@ -127,7 +127,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox);
+            this.groupBox1.Controls.Add(this.Box_Device);
             this.groupBox1.Controls.Add(this.label_t);
             this.groupBox1.Controls.Add(this.label_adr);
             this.groupBox1.Controls.Add(this.textBox_initT);
@@ -139,16 +139,19 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
-            // comboBox
+            // Box_Device
             // 
-            this.comboBox.FormattingEnabled = true;
-            this.comboBox.Items.AddRange(new object[] {
+            this.Box_Device.AutoCompleteCustomSource.AddRange(new string[] {
+            "URV-5",
+            "HP"});
+            this.Box_Device.FormattingEnabled = true;
+            this.Box_Device.Items.AddRange(new object[] {
             "HP34420A",
             "URV-5"});
-            this.comboBox.Location = new System.Drawing.Point(6, 13);
-            this.comboBox.Name = "comboBox";
-            this.comboBox.Size = new System.Drawing.Size(127, 21);
-            this.comboBox.TabIndex = 20;
+            this.Box_Device.Location = new System.Drawing.Point(6, 13);
+            this.Box_Device.Name = "Box_Device";
+            this.Box_Device.Size = new System.Drawing.Size(127, 21);
+            this.Box_Device.TabIndex = 20;
             // 
             // label_t
             // 
@@ -537,7 +540,7 @@
         private System.Windows.Forms.ToolStripMenuItem открытьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem открытьToolStripMenuItem1;
-        private System.Windows.Forms.ComboBox comboBox;
+        private System.Windows.Forms.ComboBox Box_Device;
         private System.Windows.Forms.CheckBox cBoxAB;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumTime;

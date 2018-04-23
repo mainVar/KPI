@@ -71,27 +71,46 @@ namespace volt_anus
         //--------------------------------------------------------------------------------------------------------
         public string Comand() // checked chanal & (speed) time measurment
         {
-            //if (comboBox.)
+            string chanal = "";//active chanal + time speed
+            int speed;
+            // device 
+            switch (Box_Device.Text)
             {
-                string chanal = "";//active chanal + time speed
-                int speed;
-                if (cBox_A.Checked)
-                {
-                    chanal = chanal + "PA, IA,";
-                }
+                case "HP34420A":
 
-                if (cBox_B.Checked)
-                {
-                    chanal = chanal + "PB, IB,";
-                }
+                    if (cBox_A.Checked)
+                    {
+                        chanal = chanal + "ROUT:TERM FRON1";
+                    }
+                    if (cBox_B.Checked)
+                    {
+                        chanal = chanal + "ROUT:TERM FRON2";
+                    }
 
-                speed = int.Parse(textBox_Time.Text);
-                if (speed >= 1000)
-                {
-                    chanal = chanal + " F2, X1";
-                }
-                return chanal;
+                    // return chanal;
+                    break;
+                case "URV-5":
+                    if (cBox_A.Checked)
+                    {
+                        chanal = chanal + "PA, IA,";
+                    }
+
+                    if (cBox_B.Checked)
+                    {
+                        chanal = chanal + "PB, IB,";
+                    }
+
+                    speed = int.Parse(textBox_Time.Text);
+                    if (speed >= 1000)
+                    {
+                        chanal = chanal + " F2, X1";
+                    }
+                    break;
+                    // return chanal;
+
+
             }
+            return chanal;
         }
         //--------------------------------------------------------------------------------------------------------
         private int longB()
@@ -224,8 +243,17 @@ namespace volt_anus
                    // counterChanal = false;
                 }
             }
-
-            int measur_Time;
+            if (cBox_A.Checked)
+            {
+                
+                C_GPIBDevice.ibwrt(V.i_DeviceID, Comand(), longB());
+            }
+            if (cBox_B.Checked)
+            {
+                
+                C_GPIBDevice.ibwrt(V.i_DeviceID, Comand(), longB());
+            }
+                int measur_Time;
             measur_Time = int.Parse(textBox_TimeM.Text);
             timer2.Start();
             timer2.Interval = measur_Time;
