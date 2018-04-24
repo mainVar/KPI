@@ -138,6 +138,7 @@
             this.groupBox1.Size = new System.Drawing.Size(147, 157);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "ini blok";
             // 
             // Box_Device
             // 

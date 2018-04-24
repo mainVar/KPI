@@ -322,8 +322,7 @@ namespace volt_anus
                     {
                         
                             newValueB = newValueB * coefCalibr;
-                        
-                        
+
                     }
                     //newValueB = Math.Round(newValueB, 5);
                     string temp = newValueB.ToString("0.000E+00");
