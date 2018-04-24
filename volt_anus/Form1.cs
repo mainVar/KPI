@@ -128,8 +128,20 @@ namespace volt_anus
         // button  write 
         private void write_Click(object sender, EventArgs e)
         {
-            C_GPIBDevice.ibwrt(V.i_DeviceID, "UV1.1\r\n"  , 7 );
-            V.fn_SendBoardCmd("\x0008");
+
+            switch (Box_Device.Text)
+            {
+                case "HP34420A":
+                    C_GPIBDevice.ibwrt(V.i_DeviceID, "SENS:VOLT:DC:NPLC MAX", 21);
+                    break;
+                case "URV-5":
+
+                    break;
+
+            }
+           //v1-29
+            // C_GPIBDevice.ibwrt(V.i_DeviceID, "UV1.1\r\n"  , 7 );
+           // V.fn_SendBoardCmd("\x0008");
           
            
 
@@ -230,7 +242,7 @@ namespace volt_anus
                 {
                     cBox_A.Checked = true;
                       C_GPIBDevice.ibwrt(V.i_DeviceID, Comand(), longB());
-                 //   C_GPIBDevice.ibwrt(V.i_DeviceID, "ROUT:TERM FRON1", 15);
+                      C_GPIBDevice.ibwrt(V.i_DeviceID, "READ?", 5);
                     //   textBox1.AppendText("a1"+ '\r' + '\n');
 
                    // counterChanal = true;
@@ -239,19 +251,22 @@ namespace volt_anus
                 {
                     cBox_B.Checked = true;
                       C_GPIBDevice.ibwrt(V.i_DeviceID, Comand(), longB());
-                //    textBox1.AppendText("b1" + '\r' + '\n');
-                   // counterChanal = false;
+                      C_GPIBDevice.ibwrt(V.i_DeviceID, "READ?", 5);
+                    //    textBox1.AppendText("b1" + '\r' + '\n');
+                    // counterChanal = false;
                 }
             }
             if (cBox_A.Checked)
             {
                 
                 C_GPIBDevice.ibwrt(V.i_DeviceID, Comand(), longB());
+                C_GPIBDevice.ibwrt(V.i_DeviceID, "READ?", 5);
             }
             if (cBox_B.Checked)
             {
                 
                 C_GPIBDevice.ibwrt(V.i_DeviceID, Comand(), longB());
+                C_GPIBDevice.ibwrt(V.i_DeviceID, "READ?", 5);
             }
                 int measur_Time;
             measur_Time = int.Parse(textBox_TimeM.Text);

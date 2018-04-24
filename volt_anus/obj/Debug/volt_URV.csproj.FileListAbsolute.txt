@@ -101,3 +101,4 @@ G:\Project(s)\C#\KPI\volt_anus\bin\Debug\tr\ZedGraph.resources.dll
 G:\Project(s)\C#\KPI\volt_anus\bin\Debug\zh-cn\ZedGraph.resources.dll
 G:\Project(s)\C#\KPI\volt_anus\bin\Debug\zh-tw\ZedGraph.resources.dll
 G:\Project(s)\C#\KPI\volt_anus\obj\Debug\volt_URV.csproj.CopyComplete
+D:\Projects\GALERA\Beest\Git\KPI\volt_anus\obj\Debug\volt_URV.N4_7.resources
