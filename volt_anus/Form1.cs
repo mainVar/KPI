@@ -113,6 +113,16 @@ namespace volt_anus
             return chanal;
         }
         //--------------------------------------------------------------------------------------------------------
+        private string msgOnDisplay()
+            {
+            string comand= "DISPlay:TEXT '";
+            string msg;
+            msg = " TEST";
+
+            msg=msg.Substring(counter);
+            comand = comand + msg;
+            return comand;
+            }
         private int longB()
         {
             string lengt;
@@ -123,7 +133,17 @@ namespace volt_anus
             return bit;
 
         }
-      
+        private int longMSG()
+        {
+            string lengt;
+            int bit;
+            lengt = msgOnDisplay().Length.ToString(CultureInfo.InvariantCulture);
+             textBox1.AppendText(lengt + '\r' + '\n') ;
+            bit = int.Parse(lengt);
+            return bit;
+
+        }
+
         //---------------------------------------------------------------------------------------------------------
         // button  write 
         private void write_Click(object sender, EventArgs e)
@@ -135,16 +155,13 @@ namespace volt_anus
                     C_GPIBDevice.ibwrt(V.i_DeviceID, "SENS:VOLT:DC:NPLC MAX", 21);
                     break;
                 case "URV-5":
-
+                         C_GPIBDevice.ibwrt(V.i_DeviceID, msgOnDisplay(), longMSG());
+                         counter++;
                     break;
-
             }
            //v1-29
             // C_GPIBDevice.ibwrt(V.i_DeviceID, "UV1.1\r\n"  , 7 );
            // V.fn_SendBoardCmd("\x0008");
-          
-           
-
             // C_GPIBDevice.ibwrt(V.i_DeviceID, "ROUT:TERM FRON1;*WAI", 20); 
         }
         private string readData()
@@ -242,7 +259,7 @@ namespace volt_anus
                 {
                     cBox_A.Checked = true;
                       C_GPIBDevice.ibwrt(V.i_DeviceID, Comand(), longB());
-                      C_GPIBDevice.ibwrt(V.i_DeviceID, "READ?", 5);
+                   //   C_GPIBDevice.ibwrt(V.i_DeviceID, "READ?", 5);
                     //   textBox1.AppendText("a1"+ '\r' + '\n');
 
                    // counterChanal = true;
@@ -251,7 +268,7 @@ namespace volt_anus
                 {
                     cBox_B.Checked = true;
                       C_GPIBDevice.ibwrt(V.i_DeviceID, Comand(), longB());
-                      C_GPIBDevice.ibwrt(V.i_DeviceID, "READ?", 5);
+                  //    C_GPIBDevice.ibwrt(V.i_DeviceID, "READ?", 5);
                     //    textBox1.AppendText("b1" + '\r' + '\n');
                     // counterChanal = false;
                 }
@@ -260,13 +277,13 @@ namespace volt_anus
             {
                 
                 C_GPIBDevice.ibwrt(V.i_DeviceID, Comand(), longB());
-                C_GPIBDevice.ibwrt(V.i_DeviceID, "READ?", 5);
+             //   C_GPIBDevice.ibwrt(V.i_DeviceID, "READ?", 5);
             }
             if (cBox_B.Checked)
             {
                 
                 C_GPIBDevice.ibwrt(V.i_DeviceID, Comand(), longB());
-                C_GPIBDevice.ibwrt(V.i_DeviceID, "READ?", 5);
+             //   C_GPIBDevice.ibwrt(V.i_DeviceID, "READ?", 5);
             }
                 int measur_Time;
             measur_Time = int.Parse(textBox_TimeM.Text);
@@ -354,12 +371,12 @@ namespace volt_anus
 
                 // Вычислим новое значение
                 //   double newValueOnChanaleA = _rnd.NextDouble() * (_ymax - _ymin) + _ymin;
-                 dataA = dataA.Substring(9);
+             //    dataA = dataA.Substring(9);
                 //add cheking value it or not ;
-                 double newValueOnChanaleA = Double.Parse(dataA);
+              //   double newValueOnChanaleA = Double.Parse(dataA);
                 //double newValueOnChanaleA = 2.5;
                 //Добавим его в конец списка
-                _dataA.Add(newValueOnChanaleA);
+            //    _dataA.Add(newValueOnChanaleA);
 
                 // Удалим первый элемент в списке данных, 
                 // если заполнили максимальную емкость
@@ -368,11 +385,11 @@ namespace volt_anus
                     _dataA.RemoveAt(0);
                 }
                 //------------------------------------------------------------------------
-                    dataB = dataB.Substring(9);
-                 double newValueOnChanaleB = Double.Parse(dataB);
+              //      dataB = dataB.Substring(9);
+              //   double newValueOnChanaleB = Double.Parse(dataB);
                // double newValueOnChanaleB = 2.2;
                 // Добавим его в конец списка
-                _dataB.Add(newValueOnChanaleB);
+             //   _dataB.Add(newValueOnChanaleB);
                 // Удалим первый элемент в списке данных, 
                 // если заполнили максимальную емкость
                 if (_dataB.Count > _capacity)
