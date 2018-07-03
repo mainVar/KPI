@@ -24,14 +24,18 @@ namespace volt_anus
     public partial class VoltStandart : Form
     {
         private C_GPIBDevice V; // HP34420A
-                                //   private C_GPIBDevice K;// B1-29
+        private C_GPIBDevice N;                        //   private C_GPIBDevice K;// B1-29
+        private C_GPIBDevice K;
         private int counter = 1;//   counter in data Table
         private string counterZeroAdd = "";
         bool counterChanal = false;
         bool ActiveCalibr = false;
         double coefCalibr = 0;
+        int _capacity = 100;
         //false =1 chanal , true =2 chanal
         //counterChanal = false;
+        double _ymin;
+        double _ymax;
         bool writer = false;
         public VoltStandart()
         {
@@ -39,28 +43,42 @@ namespace volt_anus
             _dataA = new List<double>();
             _dataB = new List<double>();
             DrawGraph();
+            _ymax = Double.Parse(Graf_YmaxTextBox.Text);
+            _ymin = Double.Parse(Graf_YminTextBox.Text);
         }
 
         private void Init_Click(object sender, EventArgs e)
         {
             //this.textBox1.AppendText("A");
 
-            switch (((Button)sender).Name.ToString())
+            // switch (((Button)sender).Name.ToString())
+            //  {
+            //  case "Init":
+            switch (Box_Device.Text)
             {
-                case "Init":
-
+                case "HP34420A":
                     V = new C_GPIBDevice(0, int.Parse(textBox_initNum.Text), 0, int.Parse(textBox_initT.Text), 1, 0);
 
                     if (V.flag_DeviceIsReady == true)
                     {
                         textBox1.Clear();
-                        this.textBox1.AppendText(" init compleet");
+                        this.textBox1.AppendText(" init HP34420A compleet ");
                     }
-
                     break;
-                default:
-                    return;
+                case "URV-5":
+                    // N = new C_GPIBDevice(0, int.Parse(textBox_initNum.Text), 0, int.Parse(textBox_initT.Text), 1, 0);
+                    V = new C_GPIBDevice(0, int.Parse(textBox_initNum.Text), 0, int.Parse(textBox_initT.Text), 1, 0);
+                    //if (N.flag_DeviceIsReady == true)
+                    //{
+                    //    textBox1.Clear();
+                    //    this.textBox1.AppendText(" init URV-5 compleet");
+                    //}
+                    break;
             }
+                    //       break;
+                    //    default:
+                    return;
+           // }
         }
 
         //--------------------------------------------------------------------------------------------------------
@@ -164,7 +182,7 @@ namespace volt_anus
            // V.fn_SendBoardCmd("\x0008");
             // C_GPIBDevice.ibwrt(V.i_DeviceID, "ROUT:TERM FRON1;*WAI", 20); 
         }
-        private string readData()
+        private string ReadData()
         {
             StringBuilder sb_ReceivedData = new StringBuilder();
             unsafe
@@ -192,7 +210,7 @@ namespace volt_anus
         private void read_Click(object sender, EventArgs e)
         {
           
-            textBox1.Text = readData();
+            textBox1.Text = ReadData();
         }
         // button_STARTmeasur
         private void button_STARTmeasur_Click(object sender, EventArgs e)
@@ -305,7 +323,7 @@ namespace volt_anus
             if (cBox_A.Checked)
             {
                   //  dataA = "+3.07332080E+00";
-                  dataA =  readData();
+                  dataA =  ReadData();
                     cBox_A.Checked = false;
                 counterChanal = true;
             }
@@ -313,7 +331,7 @@ namespace volt_anus
             if (cBox_B.Checked)
             {
                   //  dataB = "+3.27332080E+00";
-                  dataB =  readData();
+                  dataB =  ReadData();
                     cBox_B.Checked = false;
                 counterChanal = false;
                 writer = true;
@@ -338,7 +356,7 @@ namespace volt_anus
                     if (!ActiveCalibr && coefCalibr != 0)
                     {
                         
-                            newValueB = newValueB * coefCalibr;
+                            newValueB = newValueB * 1.59734f;
 
                     }
                     //newValueB = Math.Round(newValueB, 5);
@@ -373,10 +391,10 @@ namespace volt_anus
                 //   double newValueOnChanaleA = _rnd.NextDouble() * (_ymax - _ymin) + _ymin;
              //    dataA = dataA.Substring(9);
                 //add cheking value it or not ;
-              //   double newValueOnChanaleA = Double.Parse(dataA);
-                //double newValueOnChanaleA = 2.5;
+             //  double newValueOnChanaleA = Double.Parse(dataA);
+                double newValueOnChanaleA = 1;
                 //Добавим его в конец списка
-            //    _dataA.Add(newValueOnChanaleA);
+                _dataA.Add(newValueOnChanaleA);
 
                 // Удалим первый элемент в списке данных, 
                 // если заполнили максимальную емкость
@@ -387,9 +405,9 @@ namespace volt_anus
                 //------------------------------------------------------------------------
               //      dataB = dataB.Substring(9);
               //   double newValueOnChanaleB = Double.Parse(dataB);
-               // double newValueOnChanaleB = 2.2;
+                double newValueOnChanaleB = 10;
                 // Добавим его в конец списка
-             //   _dataB.Add(newValueOnChanaleB);
+                _dataB.Add(newValueOnChanaleB);
                 // Удалим первый элемент в списке данных, 
                 // если заполнили максимальную емкость
                 if (_dataB.Count > _capacity)
@@ -397,6 +415,7 @@ namespace volt_anus
                     _dataB.RemoveAt(0);
                 }
                 DrawGraph();
+                
                 writer = false;
             }
 
@@ -412,7 +431,7 @@ namespace volt_anus
         /// <summary>
         /// Максимальный размер очереди
         /// </summary>
-        int _capacity = 1500;
+       
         /// <summary>
         /// Здесь храним данные
         /// </summary>
@@ -425,12 +444,14 @@ namespace volt_anus
         //Random _rnd = new Random();
         
         // Интервал изменения данных по вертикали
-        double _ymin = -1.0;
-        double _ymax = 10.0;
+      
       
         private void DrawGraph()
         {
             // int _capacity = 15000;
+            _ymin=-1 ;
+            _ymax=12;
+            
             int _capacity = int.Parse(textBox_Nmeasur.Text);
             // Получим панель для рисования
             GraphPane pane = zedGrapH.GraphPane;
@@ -598,6 +619,8 @@ namespace volt_anus
             V1_29 menuV1_29 = new V1_29();
                 menuV1_29.Show();
         }
+
+      
     }
 
 }

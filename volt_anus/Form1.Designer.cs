@@ -72,9 +72,15 @@
             this.CloseButton = new System.Windows.Forms.Button();
             this.but_menuV1_29 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.Graf_YmaxTextBox = new System.Windows.Forms.TextBox();
+            this.Graf_YminTextBox = new System.Windows.Forms.TextBox();
+            this.Graf_ymin = new System.Windows.Forms.Label();
+            this.Graf_ymax = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable)).BeginInit();
             this.menuStrip.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // Init
@@ -119,7 +125,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(435, 175);
+            this.label1.Location = new System.Drawing.Point(54, 144);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 4;
@@ -336,7 +342,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(431, 100);
+            this.label2.Location = new System.Drawing.Point(426, 101);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 13);
             this.label2.TabIndex = 18;
@@ -404,6 +410,7 @@
             this.zedGrapH.Size = new System.Drawing.Size(722, 230);
             this.zedGrapH.TabIndex = 21;
             this.zedGrapH.UseExtendedPrintDialog = true;
+          
             // 
             // rebootAPI
             // 
@@ -418,7 +425,7 @@
             // ShortString
             // 
             this.ShortString.AutoSize = true;
-            this.ShortString.Location = new System.Drawing.Point(165, 129);
+            this.ShortString.Location = new System.Drawing.Point(542, 171);
             this.ShortString.Name = "ShortString";
             this.ShortString.Size = new System.Drawing.Size(96, 17);
             this.ShortString.TabIndex = 23;
@@ -447,7 +454,7 @@
             // 
             // but_menuV1_29
             // 
-            this.but_menuV1_29.Location = new System.Drawing.Point(165, 11);
+            this.but_menuV1_29.Location = new System.Drawing.Point(84, 1);
             this.but_menuV1_29.Name = "but_menuV1_29";
             this.but_menuV1_29.Size = new System.Drawing.Size(75, 23);
             this.but_menuV1_29.TabIndex = 26;
@@ -457,43 +464,91 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(246, 12);
+            this.button1.Location = new System.Drawing.Point(165, 1);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 27;
             this.button1.Text = "N4-7";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // Graf_YmaxTextBox
+            // 
+            this.Graf_YmaxTextBox.Location = new System.Drawing.Point(165, 164);
+            this.Graf_YmaxTextBox.Name = "Graf_YmaxTextBox";
+            this.Graf_YmaxTextBox.Size = new System.Drawing.Size(41, 20);
+            this.Graf_YmaxTextBox.TabIndex = 28;
+            this.Graf_YmaxTextBox.Text = "-1";
+            // 
+            // Graf_YminTextBox
+            // 
+            this.Graf_YminTextBox.Location = new System.Drawing.Point(212, 164);
+            this.Graf_YminTextBox.Name = "Graf_YminTextBox";
+            this.Graf_YminTextBox.Size = new System.Drawing.Size(41, 20);
+            this.Graf_YminTextBox.TabIndex = 28;
+            this.Graf_YminTextBox.Text = "10";
+            // 
+            // Graf_ymin
+            // 
+            this.Graf_ymin.AutoSize = true;
+            this.Graf_ymin.Location = new System.Drawing.Point(165, 148);
+            this.Graf_ymin.Name = "Graf_ymin";
+            this.Graf_ymin.Size = new System.Drawing.Size(33, 13);
+            this.Graf_ymin.TabIndex = 29;
+            this.Graf_ymin.Text = "Y min";
+            // 
+            // Graf_ymax
+            // 
+            this.Graf_ymax.AutoSize = true;
+            this.Graf_ymax.Location = new System.Drawing.Point(209, 148);
+            this.Graf_ymax.Name = "Graf_ymax";
+            this.Graf_ymax.Size = new System.Drawing.Size(36, 13);
+            this.Graf_ymax.TabIndex = 29;
+            this.Graf_ymax.Text = "Y max";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Location = new System.Drawing.Point(378, 24);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(345, 161);
+            this.groupBox2.TabIndex = 30;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Measurement parameters";
+            // 
             // VoltStandart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(725, 618);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.but_menuV1_29);
-            this.Controls.Add(this.CloseButton);
-            this.Controls.Add(this.Calibr);
-            this.Controls.Add(this.ShortString);
-            this.Controls.Add(this.rebootAPI);
-            this.Controls.Add(this.zedGrapH);
-            this.Controls.Add(this.cBoxAB);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox_TimeM);
-            this.Controls.Add(this.dataGridViewTable);
-            this.Controls.Add(this.textBox_Time);
             this.Controls.Add(this.label_Time);
-            this.Controls.Add(this.label_Nmeasur);
-            this.Controls.Add(this.textBox_Nmeasur);
+            this.Controls.Add(this.ShortString);
+            this.Controls.Add(this.cBoxAB);
             this.Controls.Add(this.cBox_B);
             this.Controls.Add(this.cBox_A);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBox_TimeM);
+            this.Controls.Add(this.textBox_Time);
+            this.Controls.Add(this.label_Nmeasur);
+            this.Controls.Add(this.textBox_Nmeasur);
             this.Controls.Add(this.button_STOPmeasur);
             this.Controls.Add(this.button_STARTmeasur);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.CloseButton);
+            this.Controls.Add(this.rebootAPI);
+            this.Controls.Add(this.dataGridViewTable);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Graf_ymax);
+            this.Controls.Add(this.Graf_ymin);
+            this.Controls.Add(this.Graf_YminTextBox);
+            this.Controls.Add(this.Graf_YmaxTextBox);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.but_menuV1_29);
+            this.Controls.Add(this.Calibr);
+            this.Controls.Add(this.zedGrapH);
             this.Controls.Add(this.comboBox_comand);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.read);
             this.Controls.Add(this.write);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
             this.Name = "VoltStandart";
@@ -504,6 +559,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable)).EndInit();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -554,6 +611,11 @@
         private System.Windows.Forms.Button CloseButton;
         private System.Windows.Forms.Button but_menuV1_29;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox Graf_YmaxTextBox;
+        private System.Windows.Forms.TextBox Graf_YminTextBox;
+        private System.Windows.Forms.Label Graf_ymin;
+        private System.Windows.Forms.Label Graf_ymax;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
 
